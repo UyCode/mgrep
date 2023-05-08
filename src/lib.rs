@@ -84,7 +84,7 @@ pub fn search<'a>(query: &str, contents: &'a str) -> BTreeMap<usize, &'a str> {
         .lines()
         .enumerate()
         .map(|(index, line)| (index+1, line))
-        .filter(|(index, line)| line.contains(query))
+        .filter(|(_index, line)| line.contains(query))
         .collect()
 }
 
@@ -94,7 +94,7 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> BTreeMap<u
         .lines()
         .enumerate()
         .map(|(index, line)| (index+1, line))
-        .filter(|(index, line)| line.to_lowercase().contains(&query.to_lowercase()))
+        .filter(|(_index, line)| line.to_lowercase().contains(&query.to_lowercase()))
         .collect()
 
 }
