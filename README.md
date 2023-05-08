@@ -1,6 +1,6 @@
 # minigrep for search contents in file
 
-
+![](assets/minigrep.png)
 
 a minigrep implementation in rust
 > inspired by [rust book](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
