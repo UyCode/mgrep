@@ -4,8 +4,8 @@
 <img height=50% src="assets/minigrep.png" width=50% />
 </div>
 
+A simple command line tool for searching for a string in a file
 
-a minigrep implementation in rust
 > inspired by [rust book](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
 > and [rust course](https://course.rs/basic-practice/intro.html)
 
@@ -22,7 +22,8 @@ $ mgrep [OPTIONS] <search> <file>
 ## Options
 
 - `-i` : ignore case distinctions
-- `-c` : print only a count of selected lines per FILE
+- `-c` : print word count in file (exclude dots and commas)
+- `-h` : print help message
 
 ## Examples
 

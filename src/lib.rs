@@ -37,7 +37,7 @@ impl Config {
                 None => return Err("Didn't get a file path")
             };
             let count = count_words(&file_path);
-            println!("total words count: {}", count);
+            println!("total words count: {}", count?);
             println!("spend time: {:?}", begin_time.elapsed());
             process::exit(0);
         }
@@ -99,15 +99,18 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> BTreeMap<u
 
 }
 
-pub fn count_words(file_path: &str) -> usize {
-    let contents = fs::read_to_string(file_path).unwrap();
+pub fn count_words(file_path: &str) -> Result<usize, &'static str> {
+    let contents = fs::read_to_string(file_path);
+    if contents.is_err() {
+        return Err("can't read file, please check file path");
+    }
     let mut count = 0;
-    for word in contents.split_whitespace() {
+    for word in contents.unwrap().split_whitespace() {
         if word.len() > 0 && word.chars().nth(0).unwrap().is_alphabetic() && (!word.contains(",") || !word.contains(".")) {
             count += 1;
         }
     }
-    count
+    Ok(count)
 }
 
 #[cfg(test)]
