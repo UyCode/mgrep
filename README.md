@@ -1,6 +1,6 @@
-# minigrep for search contents in file
+<h1 align=center> minigrep for search contents in file <h1>
 
-![](assets/minigrep.png)
+<div align=center><img height=50% src="assets/minigrep.png" width=50% /></div>
 
 a minigrep implementation in rust
 > inspired by [rust book](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
