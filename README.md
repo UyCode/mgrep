@@ -11,10 +11,12 @@ A simple command line tool for searching for a string in a file
 
 ## Usage
 
+for development and testing usage
 ```bash
 $ cargo run -- [OPTIONS] <search> <file>
 ```
 
+for release and installed usage
 ```bash
 $ mgrep [OPTIONS] <search> <file>
 ```
